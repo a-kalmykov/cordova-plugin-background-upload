@@ -185,7 +185,7 @@ public class FileTransferBackground extends CordovaPlugin {
     if (NetworkMonitor.isConnected) {
 
       MultipartUploadRequest request = new MultipartUploadRequest(this.cordova.getActivity().getApplicationContext(), payload.id,payload.serverUrl)
-              .addFileToUpload(payload.filePath, payload.fileKey)
+              .addFileToUpload(payload.filePath, payload.fileKey, null, payload.mimeType)
               .setMaxRetries(0);
 
       if (payload.showNotification) {

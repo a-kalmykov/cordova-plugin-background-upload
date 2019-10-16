@@ -16,6 +16,7 @@ public class FileTransferSettings {
   String fileKey = "file";
   boolean showNotification = true;
   String notificationTitle;
+  String mimeType = "octet-stream";
 
   HashMap<String, String> headers = new HashMap<String, String>();
   HashMap<String, String> parameters = new HashMap<String, String>();
@@ -33,6 +34,8 @@ public class FileTransferSettings {
         showNotification = settings.getBoolean("showNotification");
       if (settings.has("notificationTitle"))
         notificationTitle = settings.getString("notificationTitle");
+      if (settings.has("mimeType"))
+        notificationTitle = settings.getString("mimeType");
 
       if (settings.has("headers")) {
         JSONObject headersObject = settings.getJSONObject("headers");
